@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 
@@ -7,7 +7,7 @@
  * Include the TGM_Plugin_Activation class.
  */
 require_once dirname( __FILE__ ) . '/../all_plugins/class-tgm-plugin-activation.php';
- 
+
 add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
@@ -22,20 +22,20 @@ add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
  * TGM_Plugin_Activation class constructor.
  */
 function my_theme_register_required_plugins() {
- 
+
     /**
      * Array of plugin arrays. Required keys are name, slug and required.
      * If the source is NOT from the .org repo, then source is also required.
      */
     $plugins = array(
- 
+
         // This is an example of how to include a plugin pre-packaged with a theme
          array(
             'name'			=> 'WPBakery Visual Composer', // The plugin name
             'slug'			=> 'js_composer', // The plugin slug (typically the folder name)
             'source'			=> get_stylesheet_directory() . '/all_plugins/js_composer.zip', // The plugin source
             'required'			=> true, // If false, the plugin is only 'recommended' instead of required
-            'version'			=> '4.11.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+            'version'			=> '4.12', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
             'force_activation'		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
             'force_deactivation'	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
             'external_url'		=> '', // If set, overrides default API URL and points to an external URL
@@ -50,7 +50,7 @@ function my_theme_register_required_plugins() {
             'slug'			=> 'revslider', // The plugin slug (typically the folder name)
             'source'			=> get_stylesheet_directory() . '/all_plugins/revslider.zip', // The plugin source
             'required'			=> true, // If false, the plugin is only 'recommended' instead of required
-            'version'			=> '5.2.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+            'version'			=> '5.2.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
             'force_activation'		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
             'force_deactivation'	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
             'external_url'		=> '', // If set, overrides default API URL and points to an external URL
@@ -70,17 +70,17 @@ function my_theme_register_required_plugins() {
             'slug'          => 'mega_main_menu', // The plugin slug (typically the folder name)
             'source'            => get_stylesheet_directory() . '/all_plugins/mega_main_menu.zip', // The plugin source
             'required'          => true, // If false, the plugin is only 'recommended' instead of required
-            'version'           => '2.1.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+            'version'           => '2.1.2', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
             'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
             'force_deactivation'    => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
             'external_url'      => '', // If set, overrides default API URL and points to an external URL
         )
- 
+
     );
- 
+
     // Change this to your theme text domain, used for internationalising strings
     $theme_text_domain = 'tgmpa';
- 
+
     /**
      * Array of configuration settings. Amend each line as needed.
      * If you want the default strings to be available under your own theme domain,
@@ -116,9 +116,9 @@ function my_theme_register_required_plugins() {
             'complete'                                  => __( 'All plugins installed and activated successfully. %s', $theme_text_domain ) // %1$s = dashboard link
         )
     );
- 
+
     tgmpa( $plugins, $config );
- 
+
 }
 
 ?>
